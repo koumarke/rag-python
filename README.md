@@ -20,7 +20,7 @@
 
 ```bash
 # step.1 下載專案
-git clone <repository-url>
+git clone git@github.com:koumarke/rag-python.git
 cd rag-python
 
 # step.2 安裝 uv (依賴管理工具)
@@ -60,23 +60,19 @@ uv run python main.py "亞倫是誰？"
 uv run python main.py "故事的主要情節是什麼？" --doc-path "/path/to/other/article.txt"
 ```
 
-## 系統架構
-
-本系統採用 RAG (Retrieval-Augmented Generation) 架構，包含以下主要組件：
-
-### 1. 文檔處理流程
+## 文檔處理流程
 
 ```
 原始文檔 → 文本分割 → 嵌入向量化 → 向量資料庫儲存
 ```
 
-### 2. 查詢處理流程
+## 查詢處理流程
 
 ```
 用戶問題 → 問題嵌入 → 向量檢索 → 重新排序 → LLM 生成 → 最終回答
 ```
 
-### 3. 技術堆疊
+## 技術堆疊
 
 - **向量資料庫**：ChromaDB (EphemeralClient)
 - **嵌入模型**：shibing624/text2vec-base-chinese
